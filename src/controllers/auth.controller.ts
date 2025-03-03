@@ -17,11 +17,10 @@ export class AuthController{
     static async login(req:Request, res:Response, next: NextFunction){
         try{
             const userData = req.body
-            //TODO validar el body (opcional)
             const token = await AuthService.login(userData.email, userData.password)
             //TODO inyectar cookie al cliente
             res.cookie('token', token, {
-                maxAge: 60*60*1000, // 1 hora de caducidad
+                maxAge: 60*60*1000*3, // 3 horas de caducidad
                 httpOnly: true, // no se puede accerder mediante js
                 secure: false, // solo se envia si usas https
                 sameSite: 'strict', // Evita ataques CSRF
