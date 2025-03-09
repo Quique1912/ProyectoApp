@@ -8,7 +8,7 @@ CREATE TABLE "User" (
     "role" TEXT,
     "course" TEXT,
     "active" BOOLEAN NOT NULL DEFAULT true,
-    "accepNotifications" BOOLEAN NOT NULL DEFAULT true,
+    "acceptNotifications" BOOLEAN NOT NULL DEFAULT true,
     "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" DATETIME NOT NULL
 );
